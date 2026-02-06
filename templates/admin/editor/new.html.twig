@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+Ajout d'éditeur
+{% endblock %}
+
+{% block body %}
+
+    <div class="w-50 m-auto align-items-center p-5 border rounded shadow">
+		<h1 class="text-center m-4">Ajout d'éditeur</h1>
+        
+		{{ form_start(form) }}
+		{{ form_widget(form) }}
+        <button type="submit" class="btn btn-primary">Envoyer</button>
+		{{ form_end(form) }}
+        
+	</div>
+
+{% endblock %}
