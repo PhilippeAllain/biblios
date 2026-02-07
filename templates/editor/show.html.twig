@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% set page_title = editor is null ? 'Éditeur inconnu' : editor.name %}
+
+{% block title %}
+	{{ page_title }}
+{% endblock %}
+
+{% block body %}
+	<div class="container py-5">
+		<h1 class="mb-4">{{ page_title }}</h1>
+
+		{% if editor is not null %}
+			<div class="d-flex mb-3">
+				<strong>Nom :</strong>
+				{{ editor.name }}</div>
+
+		{% else %}
+			<p>Aucun éditeur trouvé.</p>
+		{% endif %}
+		<div class="d-flex">
+			<a href="{{ path('app_editor_index') }}">
+				<button class="btn btn-outline-dark flex-shrink-0" type="button">
+					Retour à la liste
+				</button>
+			</a>
+		</div>
+	</div>
+
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des éditeurs{% endblock %}
+
+{% block body %}
+<section class="py-5">
+    <div class="container px-4 px-lg-5 mt-5">
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+            {% for editor in editors %}
+            <div class="col mb-5">
+                <div class="card h-100">
+                    <!-- Détails du livre-->
+                    <div class="card-body p-4">
+                        <div class="text-center">
+                            <!-- Titre du livre-->
+                            <h5 class="fw-bolder">{{ editor.name }}</h5>
+                        </div>
+                    </div>
+                    <!-- Action-->
+
+                </div>
+            </div>
+            {% else %}
+                <p>Aucun éditeur actuellement</p>
+            {% endfor %}
+        </div>
+        {{ pagerfanta(editors) }}
+    </div>
+</section>
+{% endblock %}

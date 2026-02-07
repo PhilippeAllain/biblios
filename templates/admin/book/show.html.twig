@@ -3,8 +3,8 @@
 {% block title %}Livre{% endblock %}
 
 {% block body %}
-<section class="container px-4">
-    <h1>Livre : </h1>
+<div class="container p-5 d-flex flex-column align-items-center">
+<h1 class="text-center m-3">Livre : {{ book.title }}</h1>
 
     {% if book is not null %}
         <div class="card mb-1 m-auto">
@@ -45,7 +45,9 @@
     {% else %}
         <div>Livre non trouvé</div>
     {% endif %}
+    <div class="container d-flex justify-content-center gap-2 m-5">
     <a href="{{ path('app_admin_book_index') }}" class="btn btn-primary">Retour</a>
     <a href="{{ path('app_admin_book_edit', {id: book.id}) }}" class="btn btn-warning">Éditer</a>
-</section>
+    <div>
+</div>
 {% endblock %}
